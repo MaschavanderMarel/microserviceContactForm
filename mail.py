@@ -1,10 +1,5 @@
+from config import settings
 import smtplib, ssl
-from pydantic import BaseSettings
-
-class Settings(BaseSettings):
-    email_pwd: str
-
-settings = Settings()
 
 def email(reply_address, message):
     port = 465  # For SSL
@@ -16,7 +11,7 @@ def email(reply_address, message):
 reply-to: {reply_address}
 subject: {reply_address} seeks contact
 
-{message}."""
+{message}"""
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
