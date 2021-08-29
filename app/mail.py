@@ -1,4 +1,4 @@
-from config import settings
+from config import email_pwd
 import smtplib, ssl
 
 def email(reply_address, message):
@@ -6,7 +6,7 @@ def email(reply_address, message):
     smtp_server = "smtp.gmail.com"
     sender_email = "maschadeveloper@gmail.com"  # Enter your address
     receiver_email = "maschavandermarel@gmail.com"
-    password = settings.email_pwd
+    password = email_pwd 
     mail =f"""\
 reply-to: {reply_address}
 subject: {reply_address} seeks contact
