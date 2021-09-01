@@ -1,7 +1,14 @@
 # Contact form microservice
 
 ## Environment variables
-* email_pwd = password for developer emailaccount @gmail.com
+* **stmp_server** The SMTP server to use (e.g. `smtp.gmail.com`)
+* **smtp_port** The SMTP port (Optional; Defaults to SMTP SSL port 465)
+* **email_from** The email address and username on the server (e.g. `support@example.org`)
+* **email_pwd** The corresponding password
+* **email_to** The email address of the recipient. (Optional; By default this is the same as the sender)
+
+## Gmail
+To use a Gmail account for sending the emails, enable "Allow less secure apps" [here](https://myaccount.google.com/u/1/lesssecureapps).
 
 ## Run locally
 1. Install requirements with `pip3 install -r requirements.txt`
