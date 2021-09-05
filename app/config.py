@@ -6,7 +6,7 @@ def _get_env_var(name, default=EMPTY_VALUE, trim_whitespace=True):
     var = os.environ.get(name, default)
     return var.strip() if trim_whitespace else var
 
-smtp_server = _get_env_var('stmp_server')
+smtp_server = _get_env_var('smtp_server')
 smtp_port = _get_env_var('smtp_port')
 email_pwd = _get_env_var('email_pwd')
 email_from = _get_env_var('email_from')
