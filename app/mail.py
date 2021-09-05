@@ -7,6 +7,7 @@ def send_email(reply_address, message):
     mail =f"""\
 reply-to: {reply_address}
 subject: {reply_address} seeks contact
+to: {email_recipient}
 
 {message}"""
 
