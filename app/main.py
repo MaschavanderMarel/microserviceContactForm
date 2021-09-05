@@ -1,3 +1,4 @@
+from os import error
 from graphene import ObjectType, String, Schema, Field
 from fastapi import FastAPI
 from starlette.graphql import GraphQLApp
