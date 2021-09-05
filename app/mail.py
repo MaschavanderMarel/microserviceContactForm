@@ -1,7 +1,8 @@
 from config import *
 import smtplib, ssl
 
-def send_email(reply_address, message):
+def send_email(reply_address: str, message: str):
+    
     port =  465 if smtp_port == EMPTY_VALUE else smtp_port # Default: SMTP over SSL
     email_recipient = email_from if email_to == EMPTY_VALUE else email_to # Default: send to self
     mail =f"""\
