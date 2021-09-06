@@ -1,3 +1,4 @@
+from os import error
 from graphene import ObjectType, String, Schema, Field
 from fastapi import FastAPI
 from starlette.graphql import GraphQLApp
@@ -18,8 +19,8 @@ class Query(ObjectType):
         try:
             send_email(emailAddress, message)
             return Query.Result(status='success', message='Your message was sent to CollAction')
-        except:
-            return Query.Result(status='error', message='Could not send message')
+        except Exception as error:
+            return Query.Result(status='error', message=error)
 
 app = FastAPI()
 app.add_route("/", GraphQLApp(schema=Schema(query=Query)))
